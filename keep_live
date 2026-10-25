@@ -1,0 +1,15 @@
+ .github/workflow/ping.yml
+name:keep server awake
+
+on:
+  schedule:
+    - cron: "*/9 * * * *" runs every 9 minutes  
+  workflow_dispatch:        
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: stepUp study website
+        run: curl https://step-up-study.onrender.com
